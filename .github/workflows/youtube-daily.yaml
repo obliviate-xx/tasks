@@ -1,0 +1,19 @@
+name: YouTube Daily
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  youtube_daily:
+    runs-on: ubuntu-16.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 15
+      - run: npm install
+      - run: node youtube-daily.js
+        env:
+          JSONBIN_TOKEN: ${{ secrets.JSONBIN_TOKEN }}
