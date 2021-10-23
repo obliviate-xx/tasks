@@ -5,6 +5,6 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "obliviate": "github:obliviate-xx/obliviate"
+    "@kpopfans/kpop": "^1.0.1"
   }
 }
