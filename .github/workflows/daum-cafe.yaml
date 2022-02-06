@@ -1,0 +1,19 @@
+name: Daum Cafe
+
+on:
+  schedule:
+    - cron: '0 1-3 * * *'
+  workflow_dispatch:
+
+jobs:
+  cafe:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+      - run: npm install
+      - run: node tasks/cafe.js
+        env:
+          JSONBIN_TOKEN: ${{ secrets.JSONBIN_TOKEN }}
