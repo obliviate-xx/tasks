@@ -14,6 +14,6 @@ jobs:
         with:
           node-version: 16
       - run: npm install
-      - run: node tasks/daily.js
+      - run: node melon-daily.js
         env:
           JSONBIN_TOKEN: ${{ secrets.JSONBIN_TOKEN }}
